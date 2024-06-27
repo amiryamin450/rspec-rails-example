@@ -72,8 +72,8 @@ require 'rspec/rails'
 require 'database_cleaner'
 require 'capybara/rspec'
 
-require 'devise'
-require_relative 'support/controller_macros'
+# require 'devise'
+# require_relative 'support/controller_macros'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
@@ -83,8 +83,8 @@ RSpec.configure do |config|
 
   config.use_transactional_fixtures = false
   config.include FactoryBot::Syntax::Methods
-  config.include Devise::Test::ControllerHelpers, type: :controller
-  config.extend ControllerMacros, type: :controller
+  # config.include Devise::Test::ControllerHelpers, type: :controller
+  # config.extend ControllerMacros, type: :controller
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
